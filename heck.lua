@@ -6368,6 +6368,12 @@ end)
             game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
         end
     end)
+Misc:Button("AntiAFK",function()
+local VirtualUser=game:service'VirtualUser'
+    game:service'Players'.LocalPlayer.Idled:connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+    end)
     
     Misc:Seperator("Teams")
     
