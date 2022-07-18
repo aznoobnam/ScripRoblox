@@ -2120,7 +2120,7 @@ end
 
 
 
-local Library = Update:Window("AZNOOBNAM","",Enum.KeyCode.RightControl);
+local Library = Update:Window("aznoobnam","",Enum.KeyCode.RightControl);
 Main = Library:Tab("Main")
 M = Library:Tab("Misc Farm")
 Ss = Library:Tab("Stats")
@@ -2133,9 +2133,9 @@ Misc = Library:Tab("Misc")
 
 Main:Line()
 
-Main:Label("Thank 4 using my hub")
+Main:Label("Script by aznoobnam")
 
-local Time = Main:Label("Executor Time");spawn(function() getgenv().Time = true;while true do wait(.1) UpdateTime() end end);function UpdateTime() local date = os.date("*t");local hour = (date.hour) % 24;local ampm = hour < 12 and "AM" or "PM";local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm);local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year);local LocalizationService = game:GetService("LocalizationService");local Players = game:GetService("Players");local player = Players.LocalPlayer;local name = player.Name;local result, code = pcall(function()   return LocalizationService:GetCountryRegionForPlayerAsync(player)  end);Time:Set(" : " .. timezone);Time:Set("Executor Time: " .. datetime .. " [ " .. code .. " ]");spawn(function() if getgenv().Time then pcall(function()  while wait() do  Time()  end end) end end) end
+local Time = Main:Label("Executed since");spawn(function() getgenv().Time = true;while true do wait(.1) UpdateTime() end end);function UpdateTime() local date = os.date("*t");local hour = (date.hour) % 24;local ampm = hour < 12 and "AM" or "PM";local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm);local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year);local LocalizationService = game:GetService("LocalizationService");local Players = game:GetService("Players");local player = Players.LocalPlayer;local name = player.Name;local result, code = pcall(function()   return LocalizationService:GetCountryRegionForPlayerAsync(player)  end);Time:Set(" : " .. timezone);Time:Set("Executor Time: " .. datetime .. " [ " .. code .. " ]");spawn(function() if getgenv().Time then pcall(function()  while wait() do  Time()  end end) end end) end
 
 Main:Seperator("Main Farm")
 
@@ -2271,7 +2271,7 @@ Main:Toggle("AutoFarm Level",_G.AutoFarm,function(value)
         end
     end)
     
-    Main:Toggle("Auto Dought Boss",_G.AutoDoughtBoss,function(value)
+    Main:Toggle("Auto Katakuri",_G.AutoDoughtBoss,function(value)
         _G.AutoDoughtBoss = value
         StopTween(_G.AutoDoughtBoss)
     end)
@@ -6757,7 +6757,7 @@ end)
         end
     end)
     
-    Misc:Toggle("Walk on Water(bad)",_G.WalkWater,function(value)
+    Misc:Toggle("Walk on Water",_G.WalkWater,function(value)
         _G.WalkWater = value
     end)
     
